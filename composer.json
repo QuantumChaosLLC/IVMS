@@ -1,0 +1,31 @@
+{
+  "name": "ivms/php-ivms",
+  "description": "PHP 8.4 implementation of IVMS payloads with strict validation and JSON serialization",
+  "type": "library",
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": ["ivms", "travel-rule", "vasp", "crypto", "compliance"],
+  "require": {
+    "php": "^8.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "IVMS\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IVMS\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit --colors=always",
+    "coverage": "XDEBUG_MODE=coverage phpunit --coverage-text --coverage-clover build/logs/clover.xml",
+    "lint": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
